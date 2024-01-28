@@ -1,0 +1,47 @@
+---
+import HeaderNavBar from '../components/HeaderNavBar.astro'
+import FooterBar from '../components/FooterBar.astro'
+
+interface Props {
+  title?: string;
+  navbar?: boolean;
+  footer?: boolean;
+}
+
+const { title = "Story Telling", footer = false, navbar = false } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="icon" href="src/assets/book_icon.png" />
+  </head>
+  <body class="min-h-screen flex items-center justify-center">
+    {navbar && <HeaderNavBar/>}
+    <slot />
+    {footer && <FooterBar/>}
+  </body>
+
+  <style is:global>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    :root {
+      --body-background-color: #000;
+      --font-color: #fff;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      background-color: var(--body-background-color);
+      color: var(--font-color);
+    }
+  </style>
+</html>

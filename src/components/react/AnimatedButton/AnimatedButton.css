@@ -1,0 +1,30 @@
+.btn-animation {
+    background: linear-gradient(180deg, #000, #333);
+    color: #fff;
+    opacity: 0; /* Inicialmente sin opacidad */
+  
+    /* Añadido un retraso de 0.5 segundos a la animación de aparición */
+    animation: lava-lamp 4s infinite alternate-reverse, slide-up 1.5s ease-out 0.5s forwards;
+  }
+  
+  .btn-decoration {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: #fff;
+  }
+  
+  @keyframes lava-lamp {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 0;
+    }
+  }
+  
+  @keyframes slide-up {
+    to {
+      transform: translateY(0);
+      opacity: 1; /* Aparición gradual con opacidad */
+    }
+  }
+  

@@ -1,0 +1,27 @@
+---
+import AnimatedText from "../components/react/AnimatedText";
+import AnimatedButton from "../components/react/AnimatedButton";
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout footer>
+  <div class="w-1/2 flex flex-col justify-start">
+    <div>
+      <AnimatedText
+        client:visible
+        text=`Welcome to **your** story,`
+        time="fast"
+        className="text-3xl block"
+      />
+      <AnimatedText
+        client:visible
+        text=`your **adventure**`
+        time="fast"
+        className="text-3xl block"
+      />
+    </div>
+    <div class="flex">
+      <AnimatedButton client:visible link="/stories" text="Begin the journey" />
+    </div>
+  </div>
+</MainLayout>
