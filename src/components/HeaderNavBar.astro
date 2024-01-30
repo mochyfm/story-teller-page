@@ -1,73 +1,48 @@
 ---
-const image = {
-  width: 40,
-  height: 20,
-};
+import OptionButton from "./react/OptionButton";
 ---
 
 <nav
-  class="absolute top-0 p-5 flex flex-row w-full top-navbar items-center justify-between"
+  class="navBar px-8 py-4 flex flex-row fixed top-0 w-full items-center justify-between"
 >
-  <div class="flex self-start">
-    <a href="/" class="hover:cursor-pointer logo">
-      <img
-        src="src/assets/navbar/nav_logo.png"
-        alt="Book Logo"
-        width={image.width + 30}
-        height={image.height + 30}
-      />
+  <div>
+    <a href="/">
+      <img src="src/assets/book_icon.png" width={50} height={25} />
     </a>
   </div>
-  <div class="flex flex-row">
-    <a href="/" class={""}>
-      <img
-        src="src/assets/navbar/home_page.png"
-        alt=""
-        width={image.width}
-        height={image.height}
-      />
-      Home
-    </a>
-    <a href="/stories" class={""}>
-      <img
-        src="src/assets/navbar/stories_page.png"
-        alt=""
-        width={image.width}
-        height={image.height}
-      />
-      Stories
-    </a>
-    <a href="/your-stories" class={""}>
-      <img
-        src="src/assets/navbar/your_stories_page.png"
-        alt=""
-        width={image.width}
-        height={image.height}
-      />Your Stories</a
-    >
+  <div>
+    <a href="/" class="neon-line text-xl pb-2">Home</a>
+    <a href="/stories" class="neon-line text-xl pb-2">Stories</a>
+    <a href="/profile" class="neon-line text-xl pb-2">Profile</a>
   </div>
 </nav>
 
 <style>
-  .top-navbar a {
-    border: 2px solid var(--body-background-color);
-    display: flex;
+  .navBar {
+    animation: fadeIn 0.5s ease-in-out;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); 
+  }
+
+  .neon-line {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
     margin: 0px 10px;
-    padding: 10px 15px;
-    flex-direction: row;
-    align-items: center;
-    height: 50px;
   }
-  .top-navbar a > img {
-    margin-right: 15px;
+
+  .neon-line::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    transition: width 0.2s ease-in-out;
   }
-  .top-navbar a:focus:not(a.logo) {
-    border: 2px solid #388e3c;
-    border-radius: 15px;
-  }
-  .top-navbar a:first-of-type() {
-    margin-left: 10px;
-  }
-  .top-navbar a:last-of-type() {
+
+  .neon-line:hover::before {
+    width: 100%;
   }
 </style>

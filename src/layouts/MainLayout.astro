@@ -32,6 +32,26 @@ const { title = "Story Telling", footer = false, navbar = false } = Astro.props;
       margin: 0;
     }
 
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
     :root {
       --body-background-color: #000;
       --font-color: #fff;

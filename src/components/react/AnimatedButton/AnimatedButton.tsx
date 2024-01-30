@@ -1,16 +1,17 @@
 import ReactMarkdown from "react-markdown";
-import './AnimatedButton.css'
+import "./AnimatedButton.css";
 
 interface AnimatedButtonProps {
   className?: string;
-  link?: string;
+  to?: string;
   text: string;
 }
 
-const AnimatedButton = ({ className, text, link }: AnimatedButtonProps) => {
+const AnimatedButton = ({ className, text, to }: AnimatedButtonProps) => {
   return (
     <a
-      className={`flex flex-row rounded-md px-5 py-3 mt-10 self-start btn-animation btn-decoration ${className} hover:cursor-pointer`} href={link}
+      className={`btn flex flex-row rounded-md px-5 py-3 mt-10 self-start ${className} hover:cursor-pointer`}
+      href={to}
     >
       <ReactMarkdown>{text}</ReactMarkdown>
     </a>
